@@ -127,7 +127,18 @@ All three architectures use dense vector search:
 **3.2 Query Retrieves Relevant Documents**
 - The system retrieves DeepSeek-related chunks from data/Deepseek-r1.pdf.
 - These chunks are concatenated and used as context for the LLM.
-- If the retrieved context is judged not relevant, 003 switches to web search via Tavily and updates the context accordingly.
+
+```python
+def create_retriever(self, vectorstore):
+    dense_retriever = vectorstore.as_retriever(
+        search_type="similarity",
+        search_kwargs={"k": self.k}   # Top-k = 10
+    )
+    return dense_retriever
+```
+- This ensures that only the 10 most semantically similar chunks are returned for each query.
+
+- If the retrieved context is judged not relevant, RAG switches to web search via Tavily and updates the context accordingly.
 
 
 ## 4. Challenge – Q3: Generation Component
