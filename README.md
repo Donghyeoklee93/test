@@ -157,15 +157,14 @@ response = pdf_chain.invoke(
 )
 ```
 
-The LLM receives:
-- The latest user question
-- The retrieved context (from PDF or web search)
-- Chat history
+- The LLM receives The latest user question,
+- the retrieved context (from PDF or web search),
+- and Chat history
 
 **4.3 How Context Is Used**
-For document-grounded questions (e.g., “What is DeepSeek-R1-Zero?”), the model uses only PDF chunks as evidence.
-For external questions (e.g., “what is CeADAR, Ireland?”), the model uses Tavily web search output as context.
-In both cases, answers are grounded in the provided context to reduce hallucinations.
+- For document-grounded questions (e.g., “What is DeepSeek-R1-Zero?”), the model uses only PDF chunks as evidence.
+- For external questions (e.g., “what is CeADAR, Ireland?”), the model uses Tavily web search output as context.
+- In both cases, answers are grounded in the provided context to reduce hallucinations.
 
 
 ## 5. Findings & Trade-offs
