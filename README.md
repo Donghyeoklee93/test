@@ -110,8 +110,7 @@ RecursiveCharacterTextSplitter(chunk_size=300, chunk_overlap=50)
 - Overlap: 50 characters
 This improves retrieval precision while preserving context continuity.
 
-**2.3 Text Normalisation
-**
+**2.3 Text Normalisation**
 Although techniques like stopword removal, lower-casing, and punctuation cleaning are possible, they were intentionally not applied.
 Because the source is a technical document with formulas, abbreviations, and domain-specific terms, strong normalisation could distort meaning.
 Therefore, the raw text extracted from the PDF is preserved.
@@ -158,7 +157,7 @@ For external questions (e.g., “what is CeADAR, Ireland?”), the model uses Ta
 In both cases, answers are grounded in the provided context to reduce hallucinations.
 
 
-## 5. Findings & Trade-offs**
+## 5. Findings & Trade-offs
 | Architecture / Design Choice | Strengths                                      | Limitations                                              |
 |------------------------------|-----------------------------------------------|----------------------------------------------------------|
 | Naive RAG                    | Simple and fast                               | High hallucination risk                                  |
