@@ -12,4 +12,6 @@ All architectures use a single PDF document as the initial knowledge source:
 
 ## 0. Project Configuration
 
+```bash
 pip install -r requirements.txt
+
