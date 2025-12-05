@@ -111,9 +111,9 @@ RecursiveCharacterTextSplitter(chunk_size=300, chunk_overlap=50)
 This improves retrieval precision while preserving context continuity.
 
 **2.3 Text Normalisation**
-Although techniques like stopword removal, lower-casing, and punctuation cleaning are possible, they were intentionally not applied.
-Because the source is a technical document with formulas, abbreviations, and domain-specific terms, strong normalisation could distort meaning.
-Therefore, the raw text extracted from the PDF is preserved.
+- Although techniques like stopword removal, lower-casing, and punctuation cleaning are possible, they were intentionally not applied.
+- Because the source is a technical document with formulas, abbreviations, and domain-specific terms, strong normalisation could distort meaning.
+- Therefore, the raw text extracted from the PDF is preserved.
 
 
 ## 3. Challenge – Q2: Retrieval Component
