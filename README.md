@@ -2,12 +2,12 @@
 
 This project implements and compares three RAG architectures using LangGraph:
 
-- *** 001. Naive RAG with LangGraph**
-- *** 002. Query Rewrite RAG with LangGraph**
-- *** 003. Web Search RAG with LangGraph (Final Selected Architecture)**
+- **001. Naive RAG with LangGraph**
+- **002. Query Rewrite RAG with LangGraph**
+- **003. Web Search RAG with LangGraph (Final Selected Architecture)**
 
 All architectures use a single PDF document as the initial knowledge source:
-- ***Input document:** `data/Deepseek-r1.pdf`
+- Input document:** `data/Deepseek-r1.pdf`
 
 
 ## 0. Project Configuration
@@ -19,11 +19,11 @@ pip install -r requirements.txt
 ## 1. RAG Architectures (003. Web Search RAG with LangGraph (Final))
 
 The Web Search RAG architecture adds:
-- *** Query Rewrite
-- *** Relevance Check (Groundedness)
-- *** Web Search Fallback (Tavily)
+- **Query Rewrite**
+- **Relevance Check (Groundedness)**
+- **Web Search Fallback (Tavily)**
 
-***State Definition
+**State Definition**
 ```bash
 class GraphState(TypedDict):
     question: Annotated[List[str], add_messages]
@@ -33,7 +33,7 @@ class GraphState(TypedDict):
     relevance: Annotated[str, "Relevance"]
 ```
 
-***PDF Retrieval Node
+**PDF Retrieval Node**
 ```bash
 def retrieve_document(state: GraphState) -> GraphState:
     latest_question = state["question"][-1].content
@@ -42,7 +42,7 @@ def retrieve_document(state: GraphState) -> GraphState:
     return {"context": retrieved_docs}
 ```
 
-***Relevance Check Node
+**Relevance Check Node**
 ```bash
 from tools.evaluator import GroundednessChecker
 
@@ -59,7 +59,7 @@ def relevance_check(state: GraphState) -> GraphState:
     return {"relevance": response.score}
 ```
 
-***Web Search Node
+**Web Search Node**
 ```bash
 def web_search(state: GraphState) -> GraphState:
     tavily_tool = TavilySearch()
