@@ -2,9 +2,9 @@
 
 This project implements and compares three RAG architectures using LangGraph:
 
-- ***001. Naive RAG with LangGraph**
-- ***002. Query Rewrite RAG with LangGraph**
-- ***003. Web Search RAG with LangGraph (Final Selected Architecture)**
+- *** 001. Naive RAG with LangGraph**
+- *** 002. Query Rewrite RAG with LangGraph**
+- *** 003. Web Search RAG with LangGraph (Final Selected Architecture)**
 
 All architectures use a single PDF document as the initial knowledge source:
 - ***Input document:** `data/Deepseek-r1.pdf`
@@ -19,9 +19,9 @@ pip install -r requirements.txt
 ## 1. RAG Architectures (003. Web Search RAG with LangGraph (Final))
 
 The Web Search RAG architecture adds:
-- ***Query Rewrite
-- ***Relevance Check (Groundedness)
-- ***Web Search Fallback (Tavily)
+- *** Query Rewrite
+- *** Relevance Check (Groundedness)
+- *** Web Search Fallback (Tavily)
 
 ***State Definition
 ```bash
